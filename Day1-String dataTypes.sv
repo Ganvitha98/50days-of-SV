@@ -19,6 +19,7 @@ $display("C=%0s",C);
 end
 endmodule
 
+/*
 OUTPUT:
 # A=7
 # A=ANVITHA
@@ -28,4 +29,5 @@ OUTPUT:
 # B=SYSTEM VERILOG
 # Concatenated string:A=anvithaTHIS IS MY NAMEGOOD
 # C=BTECH
+*/
    
