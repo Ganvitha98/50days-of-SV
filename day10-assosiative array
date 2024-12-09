@@ -1,0 +1,38 @@
+module associative_array_example;
+
+    int my_array[string];
+
+    initial
+        begin
+        my_array["one"] = 1;
+        my_array["two"] = 2;
+        my_array["three"] = 3;
+
+        $display("Value of key 'one': %0d", my_array["one"]);
+        $display("Value of key 'two': %0d", my_array["two"]);
+        $display("Value of key 'three': %0d", my_array["three"]);
+
+        if (my_array.exists("two")) begin
+            $display("Key 'two' exists in the array.");
+        end else begin
+            $display("Key 'two' does not exist.");
+        end
+
+        my_array.delete("two");
+        $display("After deletion, does 'two' exist? %b", my_array.exists("two"));
+
+        foreach (my_array[key]) begin
+            $display("Key: %s, Value: %0d", key, my_array[key]);
+        end
+    end
+
+endmodule
+
+//OUTPUT:
+# Value of key 'one': 1
+# Value of key 'two': 2
+# Value of key 'three': 3
+# Key 'two' exists in the array.
+# After deletion, does 'two' exist? 00000000000000000000000000000000
+# Key: one, Value: 1
+# Key: three, Value: 3
