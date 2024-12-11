@@ -1,0 +1,25 @@
+module pass_by_value();
+int a=10;
+
+function void pass_by_value(int b);
+ b=b*2;
+ endfunction
+
+function automatic void pass_by_value_1(ref int c);
+ c=c+2;
+ endfunction
+
+initial
+begin
+$display("before pass_by_value:a=%0d",a);
+pass_by_value(a);
+$display("after pass_by_value:a=%0d",a);
+pass_by_value_1(a);
+$display("after pass_by_value_1:a=%0d",a);
+end
+endmodule
+
+  //Output:
+  # before pass_by_value:a=10
+# after pass_by_value:a=10
+# after pass_by_value_1:a=12
