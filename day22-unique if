@@ -1,0 +1,21 @@
+module unique_if_example;
+  int value;
+
+  initial begin
+    value = 5;
+
+    unique if (value == 0) begin
+      $display("Value is zero.");
+    end else if (value == 5) begin
+      $display("Value is five.");
+    end else if (value == 10) begin
+      $display("Value is ten.");
+    end else begin
+      $display("No matching condition.");
+    end
+  end
+endmodule
+
+      OUTPUT:
+      # Value is five.
+      
