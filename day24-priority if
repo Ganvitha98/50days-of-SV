@@ -1,0 +1,19 @@
+module priority_if_example;
+  int value;
+
+  initial begin
+    value = 7;
+
+ priority if (value < 5) begin
+      $display("Value is less than 5.");
+    end else if (value < 10) begin
+      $display("Value is less than 10 but greater than or equal to 5.");
+    end else begin
+      $display("Value is greater than or equal to 10.");
+    end
+  end
+endmodule
+   
+OUTPUT:
+# Value is less than 10 but greater than or equal to 5.   
+   
